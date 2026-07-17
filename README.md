@@ -247,10 +247,14 @@ export const profileSchema = z.object({
 
 ## 📸 화면
 
-<!-- 본인이 구현한 주요 화면 스크린샷 추가 -->
+| 화면 |
+|:---:|
+| **퀴즈 화면** |
+| <img width="330" alt="퀴즈 화면" src="https://github.com/user-attachments/assets/10d1f7ec-7b0c-4c9f-8470-1c6301e3c868" /> |
+| **역량 분석 결과** |
+| <img width="330" alt="역량 분석 결과 1" src="https://github.com/user-attachments/assets/9f3a2c33-d84d-4d41-84b6-bed8c0313611" /> <img width="330" alt="역량 분석 결과 2" src="https://github.com/user-attachments/assets/b175892b-589b-4c9f-8865-582bac422c30" /> |
+| **로드맵 - 추천 콘텐츠** |
+| <img width="330" alt="로드맵 - 추천 콘텐츠 1" src="https://github.com/user-attachments/assets/1f9115d6-97e6-4290-ad60-1fe2129d742c" /> <img width="330" alt="로드맵 - 추천 콘텐츠 2" src="https://github.com/user-attachments/assets/de37a554-176b-4fe3-940a-f0dd4408654f" /> |
+| **로드맵 - 일정 관리** |
+| <img width="330" alt="로드맵 - 일정 관리 1" src="https://github.com/user-attachments/assets/971a9221-2e5b-4df8-9411-b0aed406dbab" /> <img width="330" alt="로드맵 - 일정 관리 2" src="https://github.com/user-attachments/assets/6d912651-967a-4711-81fc-5ac945072e24" /> |
 
-| 페이지 | 설명 |
-|---|---|
-| (스크린샷) | 퀴즈 화면 |
-| (스크린샷) | 역량 분석 결과 |
-| (스크린샷) | 커리어 로드맵 추천 |
