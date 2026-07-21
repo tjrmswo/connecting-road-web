@@ -95,13 +95,14 @@ Sentry 도입을 검토하다가 백엔드팀이 비용 정책상 이미 PostHog
 
 #### 결과
 `QueryCache`/`MutationCache` 전역 핸들러, 라우트 세그먼트 에러 바운더리(`error.tsx`), 루트 크래시 폴백(`global-error.tsx`), 서버 인스트루먼테이션(`instrumentation.ts`)까지 4개 지점에 캡처 로직을 배치했습니다. 클라이언트 렌더링 에러는 `error.tsx`와 `global-error.tsx` 두 메커니즘으로 나뉘는데, 전자는 라우트 세그먼트 단위 폴백이고 후자는 루트 레이아웃 자체가 깨져 `<html>`/`<body>`를 다시 그려야 하는 경우에만 발동하는 별도 메커니즘이라 구분해서 캡처했습니다. 프로덕션 배포 환경에 적용해 4개 지점 전부 PostHog 대시보드에 정상 도달함을 테스트 이벤트로 확인했습니다. 
+<img width="645" height="540" alt="image" src="https://github.com/user-attachments/assets/c986eb5d-0484-461e-a2e3-b0ed309f7dea" />
 <img width="1461" height="830" alt="posthog 에러 캡쳐본" src="https://github.com/user-attachments/assets/7150e055-5d4c-4427-bc0b-dbfdbe7ba390" />
 
 아직 출시 전이라 실사용자 트래픽 기준 검증은 아닙니다.
 
 정량적으로 측정하진 않았지만, 요청마다 에러 여부를 확인하고 필요 시 PostHog로 전송하는 로직이 추가되는 구조라 이론적으로는 약간의 런타임 오버헤드가 있습니다. 다만 실패 경로에서만 동작하고 성공 경로에는 개입하지 않는 구조라 정상 트래픽에 미치는 영향은 제한적이라고 판단했습니다.
 
-<img width="645" height="540" alt="image" src="https://github.com/user-attachments/assets/c986eb5d-0484-461e-a2e3-b0ed309f7dea" />
+
 
 > 레이어별 캡처 전략의 상세 근거, 정상 미인증과 진짜 장애를 구분한 방식, 인스트루먼테이션 훅 코드는 [노션 문서 - 기술 상세](https://ahead-bug-3de.notion.site/PostHog-39eb438e5ecb81718633ed40e262c90f?source=copy_link)에 정리했습니다.
 
@@ -115,8 +116,8 @@ Sentry 도입을 검토하다가 백엔드팀이 비용 정책상 이미 PostHog
 
 #### 결과
 에러 발생 시 문제 필드로 자동 이동 + 해당 필드만 선택적으로 초기화하는 복구 플로우를 구현했고, 백엔드가 아직 처리하지 못하는 케이스까지 프론트엔드에서 방어했습니다. 6개 필드×4가지 무효값 매트릭스 24개에 사각지대 재현 테스트 3건, baseline 1건을 더해 테스트 28개로 검증했고, `detectMissingFieldCode` 기준 100% 커버리지를 확보했습니다(사각지대 3건은 현재 가드가 못 잡는다는 걸 확인한 재현 테스트이며, 향후 과제로 남겨뒀습니다).
-<img width="948" height="752" alt="폼 에러 복구 로직 테스트 코드 통과 화면" src="https://github.com/user-attachments/assets/6a7cfbb4-fb39-4b95-866a-555a9eb1293f" />
 
+<img width="906" height="716" alt="image" src="https://github.com/user-attachments/assets/702e4f7a-0333-49f5-b070-d9843b1f069e" />
 
 
 > 통합 에러 라우팅 맵, 사전 검증·사후 처리 코드, `returnTo` 복귀 메커니즘은 [노션 문서 - 기술 상세](https://ahead-bug-3de.notion.site/39db438e5ecb8181bf05f5eadd3a38ef?source=copy_link)에 정리했습니다.
