@@ -126,14 +126,10 @@ Sentry 도입을 검토하다가 백엔드팀이 비용 정책상 이미 PostHog
 
 ## 📸 화면
 
-| 화면 |
-|:---:|
-| **퀴즈 화면** |
-| <img width="330" alt="퀴즈 화면" src="https://github.com/user-attachments/assets/10d1f7ec-7b0c-4c9f-8470-1c6301e3c868" /> |
-| **역량 분석 결과** |
-| <img width="330" alt="역량 분석 결과 1" src="https://github.com/user-attachments/assets/9f3a2c33-d84d-4d41-84b6-bed8c0313611" /> <img width="330" alt="역량 분석 결과 2" src="https://github.com/user-attachments/assets/b175892b-589b-4c9f-8865-582bac422c30" /> |
-| **로드맵 - 추천 콘텐츠** |
-| <img width="330" alt="로드맵 - 추천 콘텐츠 1" src="https://github.com/user-attachments/assets/1f9115d6-97e6-4290-ad60-1fe2129d742c" /> <img width="330" alt="로드맵 - 추천 콘텐츠 2" src="https://github.com/user-attachments/assets/de37a554-176b-4fe3-940a-f0dd4408654f" /> |
-| **로드맵 - 일정 관리** |
-| <img width="330" alt="로드맵 - 일정 관리 1" src="https://github.com/user-attachments/assets/971a9221-2e5b-4df8-9411-b0aed406dbab" /> <img width="330" alt="로드맵 - 일정 관리 2" src="https://github.com/user-attachments/assets/6d912651-967a-4711-81fc-5ac945072e24" /> |
+| 퀴즈 & 역량 분석 | 로드맵 |
+|:---:|:---:|
+| **퀴즈 화면** | **로드맵 - 추천 콘텐츠** |
+| <img width="259" height="743" alt="image" src="https://github.com/user-attachments/assets/816e08b2-fdc1-4e43-b2c1-1d19340e892a" /> | <img width="258" height="742" alt="image" src="https://github.com/user-attachments/assets/818d5312-7509-4d5b-a134-d4a3590cff47" /> |
+| **역량 분석 결과** | **로드맵 - 일정 관리** |
+| <img width="259" height="743" alt="image" src="https://github.com/user-attachments/assets/88a700e5-3bf7-4a61-b1b7-fc01b1b3b149" /> | <img width="259" height="740" alt="image" src="https://github.com/user-attachments/assets/8868148e-1bd4-4acf-8e34-a5437060c438" /> |
 
